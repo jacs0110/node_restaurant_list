@@ -54,6 +54,10 @@ header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+.card:hover {
+  box-shadow:  rgba(0, 0, 0, 0.5) 0px 0px 15px;
+}
+
 .card img{
   height: 180px;
 }
