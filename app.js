@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/show', (req, res) => {
+  res.render('show')
+})
+
 // listening to port
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`)
