@@ -6,7 +6,7 @@
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
           <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
-            value="" aria-describedby="search-button">
+            value="" aria-describedby="search-button" id="searchForm">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
@@ -15,7 +15,14 @@
     </div>
   </div>
 </div>
-
+<!-- nav bar -->
+<ul class="nav justify-content-center">
+  {{#each categories}}
+  <li class="nav-item">
+    <a class="nav-link active" href="/category/{{this}}">{{this}}</a>
+  </li>
+  {{/each}}
+</ul>
 <!-- restaurant list -->
 <div class="container mt-5">
   <div class="row">

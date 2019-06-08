@@ -14,15 +14,31 @@ app.set('view engine', 'handlebars')
 // setting static files
 app.use(express.static('public'))
 
+// get unique restaurant categories
+let categories = []
+let results = []
+restaurantList.results.forEach((e) => {
+  results.push(e.category)
+})
+
+categories = [...new Set(results)];
+
 // routes
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: restaurantList.results })
+  res.render('index', { restaurants: restaurantList.results, categories: categories })
 })
 
 app.get('/show/:restaurant_id', (req, res) => {
   const restaurant = restaurantList.results.find(e => e.id.toString() === req.params.restaurant_id)
 
   res.render('show', { restaurant: restaurant })
+})
+
+app.get('/category/:category', (req, res) => {
+  const restaurants = restaurantList.results.filter(e => {
+    return e.category.includes(req.params.category)
+  })
+  res.render('index', { restaurants: restaurants, categories: categories })
 })
 
 app.get('/search', (req, res) => {
