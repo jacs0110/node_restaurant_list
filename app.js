@@ -46,7 +46,7 @@ app.get('/search', (req, res) => {
   const restaurants = restaurantList.results.filter(e => {
     return e.name.toLowerCase().includes(keyword.toLowerCase())
   })
-  res.render('index', { restaurants: restaurants })
+  res.render('index', { restaurants: restaurants, keyword: keyword })
 })
 
 // listening to port
