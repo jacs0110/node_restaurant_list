@@ -1,6 +1,6 @@
 ## 我的餐廳清單
 
-This is my first web appliaction built by Node.js, Express.js, and express-handlebars. The sample data in this project is from the file restaurant.json .
+This is my first web appliaction built by Node.js, Express.js, and express-handlebars. The sample data in this project is from the file "restaurant.json".
 
 ### Key features
 1. User can see all restaurants in the index page
